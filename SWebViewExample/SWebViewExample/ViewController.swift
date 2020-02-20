@@ -1,15 +1,17 @@
 //
 //  ViewController.swift
-//  WebApp
+//  SWebViewExample
 //
-//  Created by Md Kamrul Hasan on 19/2/20.
-//  Copyright © 2020 Md Kamrul Hasan. All rights reserved.
+//  Created by DhakaLive on 2/20/20.
+//  Copyright © 2020 DhakaLive. All rights reserved.
 //
 
 import UIKit
 import WebKit
 
 class ViewController: UIViewController, WKNavigationDelegate {
+    
+    //@IBOutlet weak var redView: UIView!
     var webView: WKWebView!
 
     override func viewDidLoad() {
@@ -22,6 +24,12 @@ class ViewController: UIViewController, WKNavigationDelegate {
         //navigationController?.isToolbarHidden = false
     }
 
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        let radius = self.redView.bounds.width / 2
+//        self.redView.layer.cornerRadius = radius
+//    }
+    
     override func loadView() {
         webView = WKWebView()
         webView.navigationDelegate = self
@@ -31,4 +39,6 @@ class ViewController: UIViewController, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         title = webView.title
     }
+
 }
+
